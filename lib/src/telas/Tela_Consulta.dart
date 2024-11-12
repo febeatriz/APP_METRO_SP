@@ -10,6 +10,7 @@ class TelaConsultaExtintor extends StatefulWidget {
 
 class _TelaConsultaExtintorState extends State<TelaConsultaExtintor> {
   // Controladores para campos de texto
+  final TextEditingController _patrimonioController = TextEditingController();
   final TextEditingController _tipoController = TextEditingController();
   final TextEditingController _codigoFabricanteController =
       TextEditingController();
@@ -24,7 +25,7 @@ class _TelaConsultaExtintorState extends State<TelaConsultaExtintor> {
   String? _selectedLinha;
 
   // Lista de opções
-  final List<String> capacidades = ['N2', 'Água', 'Mangueira'];
+  final List<String> capacidades = ['11/2', '21/2', '1Kg','2Kg','4Kg','6Kg','8Kg', '10Kg', '10L','12Kg','20Kg','25Kg','45Kg','50Kg'];
   final List<String> statusOptions = ['Ativo', 'Violado', 'Vencido'];
   final List<String> linhas = ['Linha Verde', 'Linha Azul', 'Linha Vermelha'];
 
@@ -46,6 +47,7 @@ class _TelaConsultaExtintorState extends State<TelaConsultaExtintor> {
 
   // Função de busca ao clicar no botão "Buscar"
   void _buscar() {
+    print("Patrimônio: ${_patrimonioController.text}");
     print("Tipo: ${_tipoController.text}");
     print("Capacidade: $_selectedCapacidade");
     print("Código do Fabricante: ${_codigoFabricanteController.text}");
@@ -125,7 +127,8 @@ class _TelaConsultaExtintorState extends State<TelaConsultaExtintor> {
                         color: Colors.black12,
                         thickness: 1,
                       ),
-                      // Campos de consulta
+                      // Novo campo Patrimônio
+                      _buildTextField('Patrimônio', _patrimonioController),
                       _buildTextField('Tipo', _tipoController),
                       _buildDropdownField('Capacidade', capacidades,
                           _selectedCapacidade, (value) {
