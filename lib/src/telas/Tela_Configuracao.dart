@@ -1,5 +1,6 @@
 import 'package:mobilegestaoextintores/src/telas/Tela_Login.dart';
 import 'package:flutter/material.dart';
+import 'package:mobilegestaoextintores/src/telas/Tela_Privacidade.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'tela_conta.dart'; 
 
@@ -11,7 +12,7 @@ class TelaConfiguracao extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white, 
       appBar: AppBar(
-        title: const Text('Configuração'),
+        title: const Text('Configuração', style: TextStyle(color: Color(0xFFD9D9D9)) ),
         backgroundColor: const Color(0xFF004AAD),
       ),
       body: Padding(
@@ -33,9 +34,10 @@ class TelaConfiguracao extends StatelessWidget {
               label: 'Privacidade',
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => TelaConta()));
+                    MaterialPageRoute(builder: (context) => const TelaPrivacidade()));
               },
             ),
+
             _buildConfigOption(
               context,
               icon: Icons.phone_android,

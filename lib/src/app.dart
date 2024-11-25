@@ -1,5 +1,6 @@
 import 'package:mobilegestaoextintores/src/telas/Tela_Configuracao.dart';
 import 'package:mobilegestaoextintores/src/telas/Tela_Consulta.dart';
+import 'package:mobilegestaoextintores/src/telas/Tela_Conta.dart';
 import 'package:mobilegestaoextintores/src/telas/Tela_Login.dart';
 import 'package:flutter/material.dart';
 import 'package:mobilegestaoextintores/src/telas/Tela_RegistrarExtintorManual.dart';
@@ -13,7 +14,7 @@ class App extends StatelessWidget{
       debugShowCheckedModeBanner: false, 
       title: 'APLICATIVO GESTÃO DE EXTINTORES',
       home: Scaffold(
-      body: TelaConsultaExtintor(),
+      body: TelaConfiguracao(),
       )
     );
   }
