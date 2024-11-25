@@ -84,30 +84,28 @@ class TelaPrivacidade extends StatelessWidget {
                     ),
                     textAlign: TextAlign.left, // Alinhando o texto à esquerda
                   ),
-                  SizedBox(height: 16), // Pula uma linha antes de "Política de Privacidade"
-                  // Inserir o restante do conteúdo
                 ],
               ),
             ),
 
+            const SizedBox(height: 20), // Espaço entre o texto e a logo
 
-            // Logo opaca centralizada
-            const Spacer(), // Espaço para empurrar a logo para o fundo
-            Opacity(
-              opacity: 0.2,
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.5, // 50% da largura
-                height: MediaQuery.of(context).size.height * 0.1, // 10% da altura
-                child: FittedBox(
-                  fit: BoxFit.contain, // Ajusta a imagem sem distorção
-                  child: Image.asset(
-                    'assets/images/logo.jpeg', // Caminho da imagem
+            // Logo opaca centralizada fora do retângulo de texto
+            Center(
+              child: Opacity(
+                opacity: 0.2,
+                child: Container(
+                  width: MediaQuery.of(context).size.width * 0.5, // 50% da largura
+                  height: MediaQuery.of(context).size.height * 0.1, // 10% da altura
+                  child: FittedBox(
+                    fit: BoxFit.contain, // Ajusta a imagem sem distorção
+                    child: Image.asset(
+                      'assets/images/logo.jpeg', // Caminho da imagem
+                    ),
                   ),
                 ),
               ),
             ),
-
-
           ],
         ),
       ),

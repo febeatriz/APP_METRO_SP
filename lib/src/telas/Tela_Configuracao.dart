@@ -1,9 +1,10 @@
-import 'package:mobilegestaoextintores/src/telas/Tela_Erro.dart';
-import 'package:mobilegestaoextintores/src/telas/Tela_Login.dart';
 import 'package:flutter/material.dart';
+import 'package:mobilegestaoextintores/src/telas/Tela_Erro.dart';
+import 'package:mobilegestaoextintores/src/telas/Tela_ModoNoturno.dart'; // Tela para configurar o modo noturno
+import 'package:mobilegestaoextintores/src/telas/Tela_Conta.dart';
 import 'package:mobilegestaoextintores/src/telas/Tela_Privacidade.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'tela_conta.dart'; 
+import 'package:mobilegestaoextintores/src/telas/Tela_Login.dart';
 
 class TelaConfiguracao extends StatelessWidget {
   const TelaConfiguracao({super.key});
@@ -11,9 +12,9 @@ class TelaConfiguracao extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, 
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('Configuração', style: TextStyle(color: Color(0xFFD9D9D9)) ),
+        title: const Text('Configuração', style: TextStyle(color: Color(0xFFD9D9D9))),
         backgroundColor: const Color(0xFF004AAD),
       ),
       body: Padding(
@@ -25,8 +26,8 @@ class TelaConfiguracao extends StatelessWidget {
               icon: Icons.account_circle,
               label: 'Conta',
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => TelaConta()));
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => const TelaConta()));
               },
             ),
             _buildConfigOption(
@@ -34,18 +35,19 @@ class TelaConfiguracao extends StatelessWidget {
               icon: Icons.lock,
               label: 'Privacidade',
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const TelaPrivacidade()));
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => const TelaPrivacidade()));
               },
             ),
-
             _buildConfigOption(
               context,
               icon: Icons.phone_android,
               label: 'Tela',
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => TelaConta()));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const TelaModoNoturno()),
+                );
               },
             ),
             _buildConfigOption(
@@ -54,9 +56,7 @@ class TelaConfiguracao extends StatelessWidget {
               label: 'Reportar Erro',
               onTap: () {
                 Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => TelaReportarErro()));
+                    context, MaterialPageRoute(builder: (context) => TelaReportarErro()));
               },
             ),
             const Divider(),
@@ -71,11 +71,11 @@ class TelaConfiguracao extends StatelessWidget {
             ),
             const Spacer(),
             Opacity(
-              opacity: 0.2, 
+              opacity: 0.2,
               child: Center(
                 child: Container(
-                  width: MediaQuery.of(context).size.width * 0.5, 
-                  height: MediaQuery.of(context).size.height * 0.1, 
+                  width: MediaQuery.of(context).size.width * 0.5,
+                  height: MediaQuery.of(context).size.height * 0.1,
                   child: Image.asset(
                     'assets/images/logo.jpeg',
                     fit: BoxFit.contain,
@@ -165,8 +165,8 @@ class TelaConfiguracao extends StatelessWidget {
 
                 // Fecha o diálogo e navega para a tela de login
                 Navigator.pop(context);
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => const TelaLogin()));
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (context) => const TelaLogin()));
               },
               child: const Text('Sair'),
             ),
