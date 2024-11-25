@@ -1,3 +1,4 @@
+import 'package:mobilegestaoextintores/src/telas/Tela_Erro.dart';
 import 'package:mobilegestaoextintores/src/telas/Tela_Login.dart';
 import 'package:flutter/material.dart';
 import 'package:mobilegestaoextintores/src/telas/Tela_Privacidade.dart';
@@ -55,7 +56,7 @@ class TelaConfiguracao extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => TelaConta()));
+                        builder: (context) => TelaReportarErro()));
               },
             ),
             const Divider(),

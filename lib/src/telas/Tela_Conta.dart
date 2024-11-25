@@ -124,7 +124,7 @@ Future<void> _buscarUsuario() async {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('Minha Conta'),
+        title: const Text('Minha Conta', style: TextStyle(color: Color(0xFFD9D9D9))),
         backgroundColor: const Color(0xFF004AAD),
       ),
       body: Padding(
