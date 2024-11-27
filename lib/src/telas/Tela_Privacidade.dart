@@ -14,12 +14,14 @@ class TelaPrivacidade extends StatelessWidget {
           ),
         ),
         backgroundColor: const Color(0xFF004AAD),
-        iconTheme: const IconThemeData(color: Color(0xFFD9D9D9)), // Cor do ícone
+        iconTheme:
+            const IconThemeData(color: Color(0xFFD9D9D9)), // Cor do ícone
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0), // Adicionando margem externa
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start, // Alinhando o conteúdo à esquerda
+          crossAxisAlignment:
+              CrossAxisAlignment.start, // Alinhando o conteúdo à esquerda
           children: [
             // Retângulo com texto
             Container(
@@ -87,16 +89,16 @@ class TelaPrivacidade extends StatelessWidget {
                 ],
               ),
             ),
-
-            const SizedBox(height: 20), // Espaço entre o texto e a logo
-
-            // Logo opaca centralizada fora do retângulo de texto
+            const Spacer(), // Empurra o conteúdo para cima
+            // Logo opaca centralizada na parte inferior
             Center(
               child: Opacity(
                 opacity: 0.2,
-                child: Container(
-                  width: MediaQuery.of(context).size.width * 0.5, // 50% da largura
-                  height: MediaQuery.of(context).size.height * 0.1, // 10% da altura
+                child: SizedBox(
+                  width:
+                      MediaQuery.of(context).size.width * 0.5, // 50% da largura
+                  height:
+                      MediaQuery.of(context).size.height * 0.1, // 10% da altura
                   child: FittedBox(
                     fit: BoxFit.contain, // Ajusta a imagem sem distorção
                     child: Image.asset(

@@ -35,8 +35,9 @@ class _TelaModoNoturnoState extends State<TelaModoNoturno> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Configurações de Tela'),
+        title: const Text('Configurações de Tela', style: TextStyle(color: Color(0xFFD9D9D9))),
         backgroundColor: const Color(0xFF004AAD),
+        iconTheme: const IconThemeData(color: Color(0xFFD9D9D9))
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
