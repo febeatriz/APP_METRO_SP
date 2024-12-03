@@ -50,8 +50,10 @@ class _TelaReportarErroState extends State<TelaReportarErro> {
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: const Text(
-                  'Caso tenha identificado algum erro, reporte abaixo:',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  'Caso tenha identificado algum erro, favor reportar abaixo',
+                  style: TextStyle(
+                    fontSize: 18, // Tamanho do texto
+                  ),
                   textAlign: TextAlign.center, // Centraliza o texto no contêiner
                 ),
               ),
@@ -81,16 +83,16 @@ class _TelaReportarErroState extends State<TelaReportarErro> {
             Center(
               child: ElevatedButton(
                 onPressed: _enviarErro,
-                child: const Text(
-                  'Enviar Erro',
-                  style: TextStyle(color: Color(0xFFD9D9D9)), // Cor do texto do botão
-                ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF004AAD), // Cor de fundo do botão
-                  padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 40),
+                  padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 60), // Aumentando o tamanho do botão
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
+                ),
+                child: const Text(
+                  'Enviar Erro',
+                  style: TextStyle(color: Color(0xFFD9D9D9), fontSize: 20), // Cor do texto do botão
                 ),
               ),
             ),
@@ -110,8 +112,6 @@ class _TelaReportarErroState extends State<TelaReportarErro> {
                 ),
               ),
             ),
-
-
           ],
         ),
       ),
